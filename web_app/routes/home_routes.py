@@ -13,7 +13,7 @@ def index():
     # compile message using specified "name" url parameter or a default value:
     name = url_params.get("name") or "Guest"
     message = f"Hello, {name}!"
-    return render_template("home.html")
+    return render_template("home.html",message=message)
 
 @home_routes.route("/overview")
 def overview():
