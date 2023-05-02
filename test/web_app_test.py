@@ -9,10 +9,10 @@ def test_home(test_client):
     assert response.status_code == 200
     assert "Welcome Home" in response.text
 
-def test_about(test_client):
-    response = test_client.get("/about")
+def test_overview(test_client):
+    response = test_client.get("/overview")
     assert response.status_code == 200
-    assert "About Me" in response.text
+    assert "Overview" in response.text
 
 def test_hello(test_client):
 
