@@ -1,21 +1,20 @@
-/*timeline styling start*/
-  .timeline-with-icons {
+.timeline-with-icons {
     border-left: 1px solid hsl(0, 0%, 90%);
     position: relative;
     list-style: none;
-  }
+}
   
-  .timeline-with-icons .timeline-item {
+.timeline-with-icons .timeline-item {
     position: relative;
-  }
+}
   
-  .timeline-with-icons .timeline-item:after {
+.timeline-with-icons .timeline-item:after {
     position: absolute;
     display: block;
     top: 0;
-  }
+}
   
-  .timeline-with-icons .timeline-icon {
+.timeline-with-icons .timeline-icon {
     position: absolute;
     left: -48px;
     background-color: hsl(217, 88.2%, 90%);
@@ -26,5 +25,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-/*timeline styling end*/
+}
