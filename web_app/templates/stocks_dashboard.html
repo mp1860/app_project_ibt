@@ -1,0 +1,74 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "stocks_dashboard" %}
+{% block content %}
+
+    <h2>Stocks Dashboard</h2>
+
+    <div>
+        <p>Selected Stock: <span id="display-symbol">{{ symbol }}</span></p>
+        <p>Latest (Adjusted) Closing Price: <span id="display-latest-closing-price">__________</span></p>
+    </div>
+
+    <div id="dataviz-container"></div>
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+
+        // processing the symbol variable returned by the router:
+        var symbol = '{{symbol}}'
+        console.log(symbol)
+
+        // processing the specific JSON response data returned by the router:
+        var responseData = JSON.parse('{{data | tojson}}')
+        console.log(responseData)
+
+        var dates = [] //> an array of date keys, for the chart ["2020-01-27", "2020-01-24", "2020-01-23", etc.]
+        var closingPrices = [] //> an array of price objects
+
+        responseData.forEach(row => {
+            dates.push(row["timestamp"])
+            closingPrices.push(row["close (USD)"])
+        });
+
+        var latestDate = dates[0]
+        var earliestDate = dates[dates.length - 1]
+        console.log("DATE RANGE:", earliestDate, "-", latestDate)
+
+        var latestClose = closingPrices[0]
+        var latestCloseUSD = "$" + latestClose.toFixed(2) // formatting the number with dollar sign and rounding to two decimal places
+        console.log("LATEST CLOSE:", latestCloseUSD)
+
+        // updating the contents of the page:
+        var displayLatestClose = document.getElementById("display-latest-closing-price")
+        displayLatestClose.innerText = latestCloseUSD
+
+        // charting the data (see https://plotly.com/javascript/line-charts/):
+        var title = "Daily Closing Prices for Stock: " + symbol
+        var layout = {title: title, height: 500}
+        var chartData = [
+            {x: dates, y: closingPrices, mode: "lines+markers"}
+        ]
+        Plotly.newPlot("dataviz-container", chartData, layout, {responsive: true})
+
+        if (symbol== 'BNB'){
+            document.write("Binance Coin (BNB) is a cryptocurrency that was launched in 2017 by the cryptocurrency exchange Binance. BNB operates on the Ethereum blockchain, using the ERC-20 standard, and is used primarily to pay for trading fees on the Binance exchange. In addition to its use as a means of payment, Binance has also launched various products and services that incorporate BNB, such as Binance Launchpad and Binance Smart Chain. Binance Launchpad is a platform for launching new blockchain projects, and users can participate in token sales using BNB. Binance Smart Chain is a blockchain platform that enables the creation of smart contracts and decentralized applications (dApps), and BNB is used to pay for transaction fees and other services on the platform. BNB has gained significant attention in the cryptocurrency community, with its market capitalization reaching into the billions of dollars, making it one of the largest cryptocurrencies by market capitalization.")
+        }
+        else if (symbol=='BTC'){
+            document.write("Bitcoin (BTC) is a decentralized digital currency that operates on a peer-to-peer network, allowing users to send and receive payments without the need for a central authority. It was created in 2009 by an anonymous individual or group using the pseudonym Satoshi Nakamoto. Transactions on the Bitcoin network are verified by network nodes through cryptography and recorded on a public ledger called the blockchain. One of the key features of Bitcoin is its limited supply, with only 21 million BTC in existence, making it a deflationary currency. Bitcoin has gained significant attention in recent years due to its potential as a store of value and as a means of payment, with many companies accepting it as a form of payment. However, its high volatility and the regulatory uncertainty surrounding it have also made it a controversial asset.")
+        }
+        else if (symbol=='ETH'){
+            document.write("Ethereum (ETH) is a decentralized blockchain platform that enables the creation of smart contracts and decentralized applications (dApps). It was launched in 2015 by the Ethereum Foundation, a non-profit organization based in Switzerland. Ethereum is open-source, meaning that anyone can contribute to its development and use it to create their own applications. Ethereum's native cryptocurrency is called Ether (ETH), which is used to pay for transaction fees and other services on the network. One of the key features of Ethereum is its ability to execute smart contracts, which are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code. This enables the automation of a wide range of transactions and eliminates the need for intermediaries. Ethereum has gained significant attention in recent years due to its potential to disrupt various industries, such as finance, real estate, and supply chain management. However, the platform has also faced scalability issues, with transaction fees and confirmation times increasing significantly during periods of high network activity.")
+        } 
+        else if (symbol=='XRP'){
+            document.write("XRP is a digital currency that was launched in 2012 by Ripple Labs, a San Francisco-based fintech company. XRP operates on a decentralized blockchain platform called the XRP Ledger, which is designed to facilitate fast and low-cost transactions. The XRP Ledger is unique in that it does not require mining, making it more energy-efficient than other blockchain platforms. XRP is primarily used by financial institutions and payment processors for cross-border payments and remittances, as it enables fast and cost-effective transfers of funds across borders. XRP has gained significant attention in the cryptocurrency community, with its market capitalization reaching into the billions of dollars, making it one of the largest cryptocurrencies by market capitalization. However, XRP has also faced legal challenges, with the U.S. Securities and Exchange Commission (SEC) suing Ripple Labs in December 2020 for allegedly conducting an unregistered securities offering with XRP. The case is still ongoing, and the outcome could have significant implications for the future of XRP and other cryptocurrencies in the U.S. regulatory landscape.")
+        }
+        else if (symbol=='LTC'){
+            document.write("Litecoin (LTC) is a decentralized digital currency that operates on a peer-to-peer network, similar to Bitcoin. It was created in 2011 by Charlie Lee, a former Google engineer, as a 'lite' version of Bitcoin, with faster block generation times and lower transaction fees. Litecoin uses a different algorithm than Bitcoin for its proof-of-work consensus mechanism, called Scrypt, which is designed to be more memory-intensive and ASIC-resistant. This means that Litecoin can be mined using consumer-grade hardware, making it more accessible to a wider range of people. Litecoin has gained significant attention in the cryptocurrency community, with its market capitalization reaching into the billions of dollars, making it one of the largest cryptocurrencies by market capitalization. Litecoin has also been used as a testbed for implementing new features and technologies, such as Segregated Witness (SegWit), which was activated on the Litecoin network before it was implemented on the Bitcoin network. Litecoin's faster transaction times and lower fees make it a popular alternative to Bitcoin for making payments and transferring funds between exchanges.")
+        }
+
+
+    </script>
+  
+
+{% endblock %}

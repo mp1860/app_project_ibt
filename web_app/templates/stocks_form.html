@@ -1,0 +1,21 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "stocks_form" %}
+{% block content %}
+
+    <h2>Stocks Form</h2>
+
+    <form action="/stocks/dashboard" method="POST">
+        <label>Stock:</label>
+        <select id="my-stock-selector" name="symbol">
+            <option value="BTC" selected>BTC</option>
+            <option value="ETH">Ethereum</option>
+            <option value="BNB">Binance Coin</option>
+            <option value="XRP">XRP</option>
+            <option value="LTC">Litecoin</option>
+        </select>
+        <br>
+
+        <button id="my-submit-btn">Go!</button>
+    </form>
+
+{% endblock %}
