@@ -38,21 +38,3 @@ def stocks_dashboard():
         print("ERROR", err)
         #flash("OOPS", "warning")
         return redirect("/stocks/form")
-
-@dashboard_routes.route("/unemployment/dashboard")
-def unemployment_dashboard():
-    print("UNEMPLOYMENT DASHBOARD...")
-
-    try:
-        alpha = AlphavantageService()
-        df = alpha.fetch_unemployment()
-        if not df.empty:
-            data = df.to_dict("records") # convert data to list of dictionaries (JSON stucture)
-            return render_template("unemployment_dashboard.html", data=data)
-        else:
-            #flash("OOPS", "warning")
-            return redirect("/")
-    except Exception as err:
-        print("ERROR", err)
-        #flash("OOPS", "warning")
-        return redirect("/")
