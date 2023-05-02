@@ -14,16 +14,16 @@ def test_overview(test_client):
     assert response.status_code == 200
     assert "Overview" in response.text
 
-def test_hello(test_client):
+def test_history(test_client):
 
     # default:
-    response = test_client.get("/hello")
+    response = test_client.get("/history")
     assert response.status_code == 200
     page = parse_page(response.data)
-    assert "Hello, World" in response.text
+    assert "History" in response.text
 
     # with custom parameter:
-    response = test_client.get("/hello?name=Jon%20Snow")
+    response = test_client.get("/history?name=Jon%20Snow")
     assert response.status_code == 200
     assert "Hello, Jon Snow" in response.text
 

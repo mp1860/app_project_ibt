@@ -15,9 +15,9 @@ def overview():
     print("OVERVIEW...")
     return render_template("overview.html")
 
-@home_routes.route("/hello")
-def hello_world():
-    print("HELLO...")
+@home_routes.route("/history")
+def history():
+    print("HISTORY...")
 
     url_params = dict(request.args)
     print("URL PARAMS:", url_params) #> can be empty like {} or full of params like {"name":"Harper"}
@@ -27,5 +27,5 @@ def hello_world():
     message = f"Hello, {name}!"
 
     #return message
-    return render_template("hello.html", message=message, other='YEAH', x='5')
+    return render_template("history.html", message=message, other='YEAH', x='5')
 
