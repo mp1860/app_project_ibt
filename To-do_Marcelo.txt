@@ -1,0 +1,6 @@
+Clean up unnecessary pages(DONE)
+Fix routes(DONE)
+Create (modify) readme file for setting up locally
+Make pages more visually appealing
+
+Optional:  Add google sheets integration somehow
