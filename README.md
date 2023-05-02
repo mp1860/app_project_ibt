@@ -4,6 +4,9 @@ Full stack web application built in Python with the [Flask](https://github.com/p
 
 ## Overview
 1. Crypto Overview (Delaney)
+    - what is cryptocurrency
+    - why is it popular
+    - different kinds of crypto
 2. Crypto History (Mike)
     - timeline of historical Crypto events
 3. Crypto Dashboard (Marcelo)
