@@ -23,5 +23,5 @@ def overview():
 @home_routes.route("/history")
 def history():
     print("HISTORY...")
-    return render_template("history.html", message=message, other='YEAH', x='5')
+    return render_template("history.html")
 
