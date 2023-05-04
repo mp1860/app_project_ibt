@@ -2,7 +2,7 @@
 
 /*timeline styling start*/
 .timeline-with-icons {
-    border-left: 1px solid hsl(0, 0%, 90%);
+    border-left: 1px solid hsl(0, 0%, 50%);
     position: relative;
     list-style: none;
 }
