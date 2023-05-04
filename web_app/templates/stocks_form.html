@@ -2,7 +2,7 @@
 {% set active_page = "stocks_form" %}
 {% block content %}
 
-    <h2>Stocks Form</h2>
+    <h2 class="mb-4">Stocks Form</h2>
 
     <form action="/stocks/dashboard" method="POST">
         <label>Stock:</label>
@@ -15,7 +15,7 @@
         </select>
         <br>
 
-        <button id="my-submit-btn">Go!</button>
+        <button class="btn btn-dark" id="my-submit-btn">Go!</button>
     </form>
 
 {% endblock %}
