@@ -46,7 +46,7 @@
       ('/stocks/form', 'stocks_form', 'Stocks Form')
     ] -%}
     {% set active_page = active_page|default('home') -%}
-    <nav class="navbar sticky-top navbar-expand-lg bg-dark text-bg-dark" data-bs-theme="dark">
+    <nav class="navbar sticky-top navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Crypto App</a>
 
@@ -63,7 +63,7 @@
                         {% set is_active = "" -%}
                     {% endif %}
 
-                    <li class="nav-item">
+                    <li class="nav-item text-warning">
                         <a class="nav-link {{ is_active }}" href="{{href}}">{{link_text}}</a>
                     </li>
                 {% endfor %}
