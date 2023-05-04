@@ -20,7 +20,7 @@
 .timeline-with-icons .timeline-icon {
     position: absolute;
     left: -48px;
-    background-color: dark;
+    background-color: #212529;
     color: #f4f425;
     border-radius: 50%;
     height: 35px;
