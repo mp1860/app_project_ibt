@@ -1,4 +1,4 @@
 1) [DONE] update css styling to prevent bootstrap layout page from overwriting styling.css for history section
 2) [DONE] update icons in history section, make prettier in general
-3) add historical cryptocurrency market size chart (ideally interactive, e.g. filterable)
+3) [DONE] add historical cryptocurrency market size chart (ideally interactive, e.g. filterable)
 4) help with overall styling, e.g. navbar, background, etc.
