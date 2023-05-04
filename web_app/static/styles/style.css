@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/*timeline styling start*/
 .timeline-with-icons {
     border-left: 1px solid hsl(0, 0%, 90%);
     position: relative;
@@ -22,9 +23,10 @@
     background-color: hsl(217, 88.2%, 90%);
     color: hsl(217, 88.8%, 35.1%);
     border-radius: 50%;
-    height: 31px;
-    width: 31px;
+    height: 35px;
+    width: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+/*timeline styling end*/
