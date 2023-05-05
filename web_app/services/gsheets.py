@@ -30,5 +30,7 @@ def push_to_sheets(coin1,coin2):
     coin_list.extend(user_coins)
     print(coin_list)
     new_df = pd.DataFrame(coin_list)
+    new_df.rename(columns={"0":"coins"})
+    print(new_df)
     wk1.set_dataframe(new_df,(1,1))
-    print(coin_list)
+    wk1.update_value('A1','coins')

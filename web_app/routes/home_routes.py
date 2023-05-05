@@ -26,10 +26,10 @@ def history():
     print("HISTORY...")
     return render_template("history.html")
 
-@home_routes.route("/contact", methods=('GET','POST'))
+@home_routes.route("/coins", methods=('GET','POST'))
 def contact():
-    print("CONTACT...")
+    print("COINS...")
     if request.method == 'POST':
         form_data = dict(request.form)
         push_to_sheets(form_data["title"],form_data["content"])
-    return render_template("contact.html")
+    return render_template("coins.html")
