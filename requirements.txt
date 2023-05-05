@@ -4,6 +4,7 @@ python-dotenv
 
 # for fetching and processing CSV formatted data:
 pandas
+pygsheets
 
 # for web application interface:
 Flask
