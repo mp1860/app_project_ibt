@@ -34,32 +34,32 @@ def test_history(test_client):
 
 
 def test_stocks_form(test_client):
-    response = test_client.get("/stocks/form")
+    response = test_client.get("/crypto/form")
     assert response.status_code == 200
     page = parse_page(response.data)
-    assert page.find("h2").text == "Stocks Form"
+    assert page.find("h2").text == "Crypto Form"
 
 
 def test_stocks_dashboard(test_client):
 
     # GET request uses MSFT by default:
-    response = test_client.get("/stocks/dashboard")
+    response = test_client.get("/crypto/dashboard")
     assert response.status_code == 200
     page = parse_page(response.data)
-    assert page.find("h2").text == "Stocks Dashboard"
+    assert page.find("h2").text == "Crypto Dashboard"
     assert page.find("span", id="display-symbol").text == "MSFT"
 
     # GET request with custom param:
-    response = test_client.get("/stocks/dashboard?symbol=GOOGL")
+    response = test_client.get("/crypto/dashboard?symbol=GOOGL")
     assert response.status_code == 200
     page = parse_page(response.data)
-    assert page.find("h2").text == "Stocks Dashboard"
+    assert page.find("h2").text == "Crypto Dashboard"
     assert page.find("span", id="display-symbol").text == "GOOGL"
 
     # POST request with custom param:
 
-    response = test_client.post("/stocks/dashboard", data={"symbol": "GOOGL"})
+    response = test_client.post("/crypto/dashboard", data={"symbol": "GOOGL"})
     assert response.status_code == 200
     page = parse_page(response.data)
-    assert page.find("h2").text == "Stocks Dashboard"
+    assert page.find("h2").text == "Crypto Dashboard"
     assert page.find("span", id="display-symbol").text == "GOOGL"

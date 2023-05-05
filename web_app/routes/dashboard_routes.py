@@ -7,12 +7,12 @@ from web_app.services.alpha import AlphavantageService
 
 dashboard_routes = Blueprint("dashboard_routes", __name__)
 
-@dashboard_routes.route("/stocks/form")
+@dashboard_routes.route("/crypto/form")
 def crypto_form():
     return render_template("stocks_form.html")
 
 
-@dashboard_routes.route("/stocks/dashboard", methods=["GET", "POST"])
+@dashboard_routes.route("/crypto/dashboard", methods=["GET", "POST"])
 def stocks_dashboard():
     print("CRYTPO DASHBOARD...")
 
@@ -32,8 +32,8 @@ def stocks_dashboard():
             return render_template("stocks_dashboard.html", symbol=symbol, data=data)
         else:
             #flash("OOPS", "warning")
-            return redirect("/stocks/form")
+            return redirect("/crypto/form")
     except Exception as err:
         print("ERROR", err)
         #flash("OOPS", "warning")
-        return redirect("/stocks/form")
+        return redirect("/crypto/form")
