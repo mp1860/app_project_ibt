@@ -8,14 +8,13 @@ from web_app.services.alpha import AlphavantageService
 dashboard_routes = Blueprint("dashboard_routes", __name__)
 
 @dashboard_routes.route("/stocks/form")
-def stocks_form():
-    print("STOCKS FORM...")
+def crypto_form():
     return render_template("stocks_form.html")
 
 
 @dashboard_routes.route("/stocks/dashboard", methods=["GET", "POST"])
 def stocks_dashboard():
-    print("STOCKS DASHBOARD...")
+    print("CRYTPO DASHBOARD...")
 
     # if the form sends the data via POST request, we'll have request.form
     # otherwise if we specify url params in a GET request, we'll have request.args
