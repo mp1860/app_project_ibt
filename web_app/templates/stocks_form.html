@@ -2,10 +2,11 @@
 {% set active_page = "stocks_form" %}
 {% block content %}
 
-    <h2 class="mb-4">Stocks Form</h2>
+    <h2 class="mb-4">Crypto Form</h2>
+    <p class="text-muted">Want to check the current price of some popular cryptocurrencies? Select your cryptocurrency and hit Go below!</p>
 
     <form action="/stocks/dashboard" method="POST">
-        <label>Stock:</label>
+        <label>Crypto:</label>
         <select class="mb-4" id="my-stock-selector" name="symbol">
             <option value="BTC" selected>BTC</option>
             <option value="ETH">Ethereum</option>
