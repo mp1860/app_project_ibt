@@ -1,11 +1,11 @@
 {% extends "bootstrap_5_layout.html" %}
-{% set active_page = "stocks_dashboard" %}
+{% set active_page = "crypto_dashboard" %}
 {% block content %}
 
-    <h2>Stocks Dashboard</h2>
+    <h2>Crypto Dashboard</h2>
 
     <div>
-        <p>Selected Stock: <span id="display-symbol">{{ symbol }}</span></p>
+        <p>Selected Crypto: <span id="display-symbol">{{ symbol }}</span></p>
         <p>Latest (Adjusted) Closing Price: <span id="display-latest-closing-price">__________</span></p>
     </div>
 
@@ -44,7 +44,7 @@
         displayLatestClose.innerText = latestCloseUSD
 
         // charting the data (see https://plotly.com/javascript/line-charts/):
-        var title = "Daily Closing Prices for Stock: " + symbol
+        var title = "Daily Closing Prices for Crypto: " + symbol
         var layout = {title: title, height: 500}
         var chartData = [
             {x: dates, y: closingPrices, mode: "lines+markers"}
