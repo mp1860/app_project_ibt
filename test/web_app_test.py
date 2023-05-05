@@ -33,14 +33,14 @@ def test_history(test_client):
 #
 
 
-def test_crypto_form(test_client):
+def test_stocks_form(test_client):
     response = test_client.get("/crypto/form")
     assert response.status_code == 200
     page = parse_page(response.data)
     assert page.find("h2").text == "Crypto Form"
 
 
-def test_crypto_dashboard(test_client):
+def test_stocks_dashboard(test_client):
 
     # GET request uses MSFT by default:
     response = test_client.get("/crypto/dashboard")

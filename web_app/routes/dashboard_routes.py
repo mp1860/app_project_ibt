@@ -9,11 +9,11 @@ dashboard_routes = Blueprint("dashboard_routes", __name__)
 
 @dashboard_routes.route("/crypto/form")
 def crypto_form():
-    return render_template("crypto_form.html")
+    return render_template("stocks_form.html")
 
 
 @dashboard_routes.route("/crypto/dashboard", methods=["GET", "POST"])
-def crypto_dashboard():
+def stocks_dashboard():
     print("CRYTPO DASHBOARD...")
 
     # if the form sends the data via POST request, we'll have request.form
@@ -29,7 +29,7 @@ def crypto_dashboard():
         df = alpha.fetch_stocks_daily(symbol=symbol)
         if not df.empty:
             data = df.to_dict("records") # convert data to list of dictionaries (JSON stucture)
-            return render_template("crypto_dashboard.html", symbol=symbol, data=data)
+            return render_template("stocks_dashboard.html", symbol=symbol, data=data)
         else:
             #flash("OOPS", "warning")
             return redirect("/crypto/form")
