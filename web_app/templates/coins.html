@@ -10,17 +10,17 @@
     <section class="py-5">
 
         <form method="post">
-            <label for="title">Title</label>
+            <label for="title"><b>Favorite Coin</b></label>
             <br>
-            <input type="text" name="title"
-                placeholder="Message title"
+            <input class="mb-4" type="text" name="title"
+                placeholder="ex: Bitcoin"
                 value="{{ request.form['title'] }}"></input>
             <br>
 
-            <label for="content">Message Content</label>
+            <label for="content"><b>Why Do You Love It?</b></label>
             <br>
-            <textarea name="content"
-                    placeholder="Message content"
+            <textarea class="mb-4" name="content"
+                    placeholder="ex: Because its the OG coin"
                     rows="15"
                     cols="60"
                     >{{ request.form['content'] }}</textarea>
