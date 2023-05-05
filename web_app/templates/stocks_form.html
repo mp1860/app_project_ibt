@@ -4,21 +4,23 @@
 {% block content %}
 
 
-    <h2 class="mb-4">Crypto Form</h2>
+    <h2>Crypto Form</h2>
     <p class="text-muted">Want to check the current price of some popular cryptocurrencies? Select your cryptocurrency and hit Go below!</p>
+    
+    <section class="py-5">
+        <form action="/crypto/dashboard" method="POST">
+            <label>Crypto:</label>
+            <select class="mb-4" id="my-stock-selector" name="symbol">
+                <option value="BTC" selected>BTC</option>
+                <option value="ETH">Ethereum</option>
+                <option value="BNB">Binance Coin</option>
+                <option value="XRP">XRP</option>
+                <option value="LTC">Litecoin</option>
+            </select>
+            <br>
 
-    <form action="/crypto/dashboard" method="POST">
-        <label>Crypto:</label>
-        <select class="mb-4" id="my-stock-selector" name="symbol">
-            <option value="BTC" selected>BTC</option>
-            <option value="ETH">Ethereum</option>
-            <option value="BNB">Binance Coin</option>
-            <option value="XRP">XRP</option>
-            <option value="LTC">Litecoin</option>
-        </select>
-        <br>
-
-        <button class="btn btn-dark" id="my-submit-btn">Go!</button>
-    </form>
+            <button class="btn btn-dark" id="my-submit-btn">Go!</button>
+        </form>
+    </section>    
 
 {% endblock %}
