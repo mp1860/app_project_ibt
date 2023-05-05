@@ -9,9 +9,12 @@ from web_app.routes.dashboard_routes import dashboard_routes
 def create_app():
 
     app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'adryfish'
 
     app.register_blueprint(home_routes)
     app.register_blueprint(dashboard_routes)
+
+
 
     return app
 
