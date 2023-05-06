@@ -1,6 +1,6 @@
 
 from flask import Blueprint, request, render_template, url_for, flash, redirect, current_app, session, request
-from web_app.services.gsheets import push_to_sheets, top_coins
+from web_app.services.gsheets import push_to_sheets
 
 
 home_routes = Blueprint("home_routes", __name__)
