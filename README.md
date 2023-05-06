@@ -3,13 +3,17 @@
 Full stack web application built in Python with the [Flask](https://github.com/prof-rossetti/intro-to-python/blob/main/notes/python/packages/flask.md) framework. 
 
 ## Overview
-1. Crypto Overview (Delaney)
+1. Crypto Overview 
     - what is cryptocurrency
     - why is it popular
     - different kinds of crypto
-2. Crypto History (Mike)
+2. Crypto History 
     - timeline of historical Crypto events
-3. Crypto Dashboard (Marcelo)
+    - chart of cryptocurrency market cap
+3. Crypto Dashboard
+    - see latest price of popular cryptocurrencies
+4. Favorite Coin
+    - share your favorite coin with the developers
 
 ## Setup
 
