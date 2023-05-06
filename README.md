@@ -81,22 +81,8 @@ GOOGLE_SHEETS_DOCUMENT_ID="..."
 
 ## Usage
 
-Test the data fetching process:
-
-```sh
-python -m web_app.services.alpha
-```
-
 Run the web application (then view in the browser at localhost:5000):
 
 ```sh
 flask run
-```
-
-## Testing
-
-Running tests, as configured by the "conftest.py" file and defined in the "test" directory:
-
-```sh
-pytest
 ```

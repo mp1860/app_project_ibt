@@ -9,9 +9,5 @@ pygsheets
 # for web application interface:
 Flask
 
-# for testing:
-pytest
-beautifulsoup4
-
 #server
 gunicorn
