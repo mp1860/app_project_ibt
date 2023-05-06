@@ -1,8 +1,0 @@
-Clean up unnecessary pages(DONE)
-Fix routes(DONE)
-Fix/rename pages
-Create (modify) readme file for setting up locally
-Make pages more visually appealing
-
-Optional:  Add google sheets integration somehow
-            Idea: Let user input a crypto coin and show some stats about it. Log the crypto coins on a sheet for popularity tracking

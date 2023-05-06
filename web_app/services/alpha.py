@@ -28,7 +28,7 @@ class AlphavantageService:
     def __init__(self, api_key=ALPHAVANTAGE_API_KEY):
         self.api_key = api_key
 
-    def fetch_stocks_daily(self, symbol="MSFT"):
+    def fetch_stocks_daily(self, symbol="BTC"):
         """
             Fetches stock data for the given symbol.
             Returns the data, or an empty DataFrame if none is available.
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     alpha = AlphavantageService()
 
-    symbol = input("Please input a stock symbol: ")
+    symbol = input("Please input a crypto symbol: ")
     print(symbol)
 
     stocks_df = alpha.fetch_stocks_daily(symbol=symbol)
