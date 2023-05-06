@@ -3,13 +3,17 @@
 Full stack web application built in Python with the [Flask](https://github.com/prof-rossetti/intro-to-python/blob/main/notes/python/packages/flask.md) framework. 
 
 ## Overview
-1. Crypto Overview (Delaney)
+1. Crypto Overview 
     - what is cryptocurrency
     - why is it popular
     - different kinds of crypto
-2. Crypto History (Mike)
+2. Crypto History 
     - timeline of historical Crypto events
-3. Crypto Dashboard (Marcelo)
+    - chart of cryptocurrency market cap
+3. Crypto Dashboard
+    - see latest price of popular cryptocurrencies
+4. Favorite Coin
+    - share your favorite coin with the developers
 
 ## Setup
 
@@ -17,7 +21,7 @@ Full stack web application built in Python with the [Flask](https://github.com/p
 
 To run this app, you'll need to have Anaconda, Python, and Pip installed (specifically Python version 3.10+).
 
-### Installation
+### Installation (if desire to run locally)
 
 Make a copy of the template repository from GitHub. Clone your copy of the repo onto your local computer, for example onto your Desktop.
 
@@ -61,7 +65,6 @@ You'll also need to obtain a "premium" access [AlphaVantage API Key](https://www
 
 Create a new file called ".env" in the root directory of your local repository, and place inside contents like the following:
 
-
 ```sh
 # this is the ".env" file...
 
@@ -69,7 +72,8 @@ Create a new file called ".env" in the root directory of your local repository, 
 FLASK_APP="web_app"
 
 # for interfacing with the AlphaVantage API:
-ALPHAVANTAGE_API_KEY="________"
+ALPHAVANTAGE_API_KEY="..."
+GOOGLE_SHEETS_DOCUMENT_ID="..."
 ```
 
 > NOTE: when you push your repository to GitHub, the ".env" file does not show up - this is desired behavior, as designated by the ".gitignore" file, to prevent our secret credentials stored in the ".env" file from being uploaded or exposed on GitHub.
@@ -77,22 +81,8 @@ ALPHAVANTAGE_API_KEY="________"
 
 ## Usage
 
-Test the data fetching process:
-
-```sh
-python -m web_app.services.alpha
-```
-
 Run the web application (then view in the browser at localhost:5000):
 
 ```sh
 flask run
-```
-
-## Testing
-
-Running tests, as configured by the "conftest.py" file and defined in the "test" directory:
-
-```sh
-pytest
 ```
