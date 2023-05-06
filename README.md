@@ -108,7 +108,7 @@ Run the web application (then view in the browser at localhost:5000):
 ```sh
 flask run
 ```
-## Deploying to Render
+## Setup (if desire to host server on Render)
 
 Follow this guide if you would like to deploy your host your application on a free server provided by the Render platform.
 
@@ -138,7 +138,7 @@ GOOGLE_SHEETS_DOCUMENT_ID="..."
 service_file="ibt-proj-81e46f86a85f.json"
 ```
 
-Also set two [secret configuration files]. One called "ibt-proj-81e46f86a85f.json", and paste the contents from your google service account credentials file (as referenced above). Another called ".env", and paste the contents from your .env file (as referenced above) 
+Also set two [secret configuration files]. One called "ibt-proj-81e46f86a85f.json", and paste the contents from your google service account credentials file (as referenced above). Another called ".env", and paste the contents from your .env file (as referenced above). 
 
 
 Finally, click to "Create" the web service.
