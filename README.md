@@ -18,7 +18,7 @@ Full stack web application built in Python with the [Flask](https://github.com/p
 
 ## Setup (if desire to run locally)
 
-This is only necessary if you desire to run the app locally, otherwise you can utilize our hosted server located at 
+This is only necessary if you desire to run the app locally, otherwise you can utilize our hosted server located at https://ultimate-crypto-app.onrender.com/
 
 ### Prerequisites
 
@@ -99,7 +99,7 @@ For the chosen service account, create new JSON credentials file as necessary fr
 
 Move the service account credentials JSON file into the root directory of this repo, and rename it as "ibt-proj-81e46f86a85f.json".
 
-> NOTE: the "google-credentials.json" file has been ignored from version control via the ".gitignore" file, to avoid seeing / exposing these credentials on GitHub
+> NOTE: the "ibt-proj-81e46f86a85f.json" file has been ignored from version control via the ".gitignore" file, to avoid seeing / exposing these credentials on GitHub
 
 ## Usage
 
