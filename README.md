@@ -21,7 +21,7 @@ Full stack web application built in Python with the [Flask](https://github.com/p
 
 To run this app, you'll need to have Anaconda, Python, and Pip installed (specifically Python version 3.10+).
 
-### Installation
+### Installation (if desire to run locally)
 
 Make a copy of the template repository from GitHub. Clone your copy of the repo onto your local computer, for example onto your Desktop.
 
@@ -65,7 +65,6 @@ You'll also need to obtain a "premium" access [AlphaVantage API Key](https://www
 
 Create a new file called ".env" in the root directory of your local repository, and place inside contents like the following:
 
-
 ```sh
 # this is the ".env" file...
 
@@ -73,7 +72,8 @@ Create a new file called ".env" in the root directory of your local repository, 
 FLASK_APP="web_app"
 
 # for interfacing with the AlphaVantage API:
-ALPHAVANTAGE_API_KEY="________"
+ALPHAVANTAGE_API_KEY="..."
+GOOGLE_SHEETS_DOCUMENT_ID="..."
 ```
 
 > NOTE: when you push your repository to GitHub, the ".env" file does not show up - this is desired behavior, as designated by the ".gitignore" file, to prevent our secret credentials stored in the ".env" file from being uploaded or exposed on GitHub.
