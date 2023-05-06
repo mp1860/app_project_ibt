@@ -1,66 +1,25 @@
+import collections as col
+
+coins_list =['BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BTC', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'BNB', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'ETH', 'LTC', 'BTC', 'BNB', 'BDL', 'BEE', 'BELA', 'BELA', 'BELA', 'BELA', 'BELA', 'BELA', 'BELA', 'BELA', 'BELA', 'BIS', 'BDL', 'BEE', 'BELA', 'BELA', 'BELA', 'BELA', 'BELA', 'BEE', 'BDL', 'BDL', 'BDL', 'BDL', 'BDL', 'BEE', 'BELA', 'BET', 'BFT', 'BFT', 'BFT', 'BFT', 'BEE', 'BEE', 'BEE', 'BEE', 'BEE', 'BTC', 'BTC']
+print(coins_list)
+
+def top_coins(input_list):
+    coin_counts = col.Counter(input_list)
+    sorted_counts = sorted(coin_counts.items(),key=lambda x:x[1],reverse=True)
+    top_coin = sorted_counts[0]
+    top_coin_name, top_coin_count = top_coin
+    print("TOP COIN:", top_coin_name, "COUNT:", top_coin_count)
+    top_coin2 = sorted_counts[1]
+    top_coin_name2, top_coin_count2 = top_coin2
+    print("TOP COIN:", top_coin_name2, "COUNT:", top_coin_count2)
+    top_coin3 = sorted_counts[2]
+    top_coin_name3, top_coin_count3 = top_coin3
+    print("TOP COIN:", top_coin_name3, "COUNT:", top_coin_count3)
+    
+        
 
 
-import os
-from dotenv import load_dotenv
-from pandas import read_csv, DataFrame
+top_coins(coins_list)
 
 
-load_dotenv()
 
-ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
-
-
-def to_usd(my_price):
-    """
-        Converts a numeric value to usd-formatted string, for printing and display purposes.
-
-        Param: my_price (int or float) like 4000.444444
-
-        Example: to_usd(4000.444444)
-
-        Returns: $4,000.44
-    """
-    return f"${my_price:,.2f}"
-
-
-class AlphavantageService:
-
-    def __init__(self, api_key=ALPHAVANTAGE_API_KEY):
-        self.api_key = api_key
-
-    def fetch_stocks_daily(self, symbol="MSFT"):
-        """
-            Fetches stock data for the given symbol.
-            Returns the data, or an empty DataFrame if none is available.
-        """
-        request_url = f"https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol={symbol}&market=USD&apikey={self.api_key}&datatype=csv"
-        df = read_csv(request_url) #> pandas.DataFrame
-        if "timestamp" not in df.columns:
-            # sometimes we might not get the data
-            # ... when using the demo key or
-            # ... when hitting rate limits,
-            # ... or when supplying invalid symbols
-            return DataFrame()
-        else:
-            return df
-
-
-if __name__ == "__main__":
-
-    alpha = AlphavantageService()
-
-    symbol = input("Please input a stock symbol: ")
-    print(symbol)
-
-    stocks_df = alpha.fetch_stocks_daily(symbol=symbol)
-    if stocks_df.empty:
-        print("OOPS, something went wrong. Please check your inputs and try again...")
-    else:
-        print("hello")
-        print(stocks_df.head())
-
-        print("-----------------")
-        print("LATEST DATA:")
-        latest = stocks_df.iloc[0] # get the first row in the dataset
-        print(latest["timestamp"])
-        print(to_usd(latest["close (USD)"]))
