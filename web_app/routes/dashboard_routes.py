@@ -21,7 +21,7 @@ def stocks_dashboard():
     request_data = dict(request.form or request.args)
     print("REQUEST DATA:", request_data)
 
-    symbol = request_data.get("symbol") or "MSFT"
+    symbol = request_data.get("symbol") or "BTC"
     print("SYMBOL:", symbol)
 
     try:
