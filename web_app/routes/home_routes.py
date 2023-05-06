@@ -33,6 +33,7 @@ def contact():
     if request.method == 'POST':
         form_data = dict(request.form)
         push_to_sheets(form_data["title"],form_data["content"])
+        flash("PAT YOURSELF ON THE BACK!🙌 FORM SUBMITTED SUCCESSFULLY 🙏")
         return redirect("/coins")
     return render_template("coins.html")
       
