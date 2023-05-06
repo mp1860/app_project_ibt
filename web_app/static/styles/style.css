@@ -30,3 +30,28 @@
     justify-content: center;
 }
 /*timeline styling end*/
+
+/*carousel styling start*/
+.carousel-caption{
+    margin-top: 20%;
+    margin-bottom: 20%;
+    background: rgba(0,0,0,0.7);
+}
+
+.carousel-caption h5{
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    color:black;
+}
+
+.carousel-caption p{
+    width: 75%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+    color:black;
+}
+
+/*carousel styling end*/
