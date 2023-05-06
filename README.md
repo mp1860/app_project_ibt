@@ -3,6 +3,7 @@
 Full stack web application built in Python with the [Flask](https://github.com/prof-rossetti/intro-to-python/blob/main/notes/python/packages/flask.md) framework. 
 
 ## Overview
+
 1. Crypto Overview 
     - what is cryptocurrency
     - why is it popular
@@ -15,13 +16,15 @@ Full stack web application built in Python with the [Flask](https://github.com/p
 4. Favorite Coin
     - share your favorite coin with the developers
 
-## Setup
+## Setup (if desire to run locally)
+
+This is only necessary if you desire to run the app locally, otherwise you can utilize our hosted server located at 
 
 ### Prerequisites
 
 To run this app, you'll need to have Anaconda, Python, and Pip installed (specifically Python version 3.10+).
 
-### Installation (if desire to run locally)
+### Installation
 
 Make a copy of the template repository from GitHub. Clone your copy of the repo onto your local computer, for example onto your Desktop.
 
@@ -63,6 +66,7 @@ You'll also need to obtain a "premium" access [AlphaVantage API Key](https://www
 
 ## Configuration
 
+### .env Setup
 Create a new file called ".env" in the root directory of your local repository, and place inside contents like the following:
 
 ```sh
@@ -78,6 +82,24 @@ GOOGLE_SHEETS_DOCUMENT_ID="..."
 
 > NOTE: when you push your repository to GitHub, the ".env" file does not show up - this is desired behavior, as designated by the ".gitignore" file, to prevent our secret credentials stored in the ".env" file from being uploaded or exposed on GitHub.
 
+
+### Google APIs Setup
+
+To interface with Google APIs, the app will need access to a local "service account" credentials file.
+
+#### Enabling APIs
+
+From the [Google APIs Dashboard](https://console.cloud.google.com/apis/dashboard) page, search for and "enable" any API(s) of interest, in this case the Google Sheets API.
+
+#### Service Account Credentials
+
+From the [Google API Credentials](https://console.cloud.google.com/apis/credentials) page, create a new service account as necessary.
+
+For the chosen service account, create new JSON credentials file as necessary from the "Keys" menu, then download the resulting JSON file.
+
+Move the service account credentials JSON file into the root directory of this repo, and rename it as "ibt-proj-81e46f86a85f.json".
+
+> NOTE: the "google-credentials.json" file has been ignored from version control via the ".gitignore" file, to avoid seeing / exposing these credentials on GitHub
 
 ## Usage
 
