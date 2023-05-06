@@ -1,6 +1,7 @@
 
 from flask import Blueprint, request, render_template, url_for, flash, redirect, current_app, session, request
-from web_app.services.gsheets import push_to_sheets
+from web_app.services.gsheets import push_to_sheets, top_coins
+
 
 home_routes = Blueprint("home_routes", __name__)
 
@@ -32,7 +33,7 @@ def contact():
     if request.method == 'POST':
         form_data = dict(request.form)
         push_to_sheets(form_data["title"],form_data["content"])
-        return redirect('/coins')
+        return redirect("/coins")
     return render_template("coins.html")
       
 
