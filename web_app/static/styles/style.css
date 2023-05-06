@@ -4,6 +4,7 @@
 .timeline-with-icons {
     border-left: 1px solid hsl(0, 0%, 70%);
     position: relative;
+    left: -42px;
     list-style: none;
 }
   
