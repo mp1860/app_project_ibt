@@ -108,3 +108,45 @@ Run the web application (then view in the browser at localhost:5000):
 ```sh
 flask run
 ```
+## Deploying to Render
+
+Follow this guide if you would like to deploy your host your application on a free server provided by the Render platform.
+
+References:
+  + https://render.com/docs/deploy-flask
+
+### Render Setup
+
+Login to [Render](https://dashboard.render.com) and visit the dashboard.
+
+Create a New "Web Service". Choose your own repository by specifying its public URL.
+
+Specify start command:
+
+```
+gunicorn "web_app:create_app()"
+```
+
+Choose instance type of "free".
+
+Under the "Advanced" options, set the following environment variables (specifying your own API Key values):
+
+
+```sh
+ALPHAVANTAGE_API_KEY="..."
+GOOGLE_SHEETS_DOCUMENT_ID="..."
+service_file="ibt-proj-81e46f86a85f.json"
+```
+
+Also set two [secret configuration files]. One called "ibt-proj-81e46f86a85f.json", and paste the contents from your google service account credentials file (as referenced above). Another called ".env", and paste the contents from your .env file (as referenced above) 
+
+
+Finally, click to "Create" the web service.
+
+
+### Render Deploys
+
+Whenever you push new code to the desingated branch in your GitHub repository, it will trigger a new deployment to update your hosted site.
+
+You can also trigger builds manually.
+
