@@ -19,12 +19,12 @@
   
 .timeline-with-icons .timeline-icon {
     position: absolute;
-    left: -45px;
+    left: -42px;
     background-color: #212529;
     color: #FFD700;
     border-radius: 50%;
-    height: 35px;
-    width: 35px;
+    height: 34px;
+    width: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
