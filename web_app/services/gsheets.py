@@ -2,6 +2,7 @@ import pygsheets
 import pandas as pd
 import collections as col
 
+#Code sampled from https://www.plus2net.com/python/pygsheets.php
 #authorization
 def push_to_sheets(coin1,coin2):
     gc = pygsheets.authorize(service_file='ibt-proj-81e46f86a85f.json')
