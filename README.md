@@ -13,7 +13,7 @@ Full stack web application built in Python with the [Flask](https://github.com/p
     - chart of cryptocurrency market cap
 3. Crypto Dashboard
     - see latest price of popular cryptocurrencies
-4. Favorite Coin
+4. Favorite Coin [spreadsheet](https://docs.google.com/spreadsheets/d/1KZvj7sb9L3xke4eH4ky3vg5xX0vcNTZxGCfJyR_xrvI)
     - share your favorite coin with the developers
 
 ## Setup (if desire to run locally)
